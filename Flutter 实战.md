@@ -45,8 +45,6 @@ typedef WidgetBuilder = Widget Function(BuildContext context);
 
 
 
-
-
 ###项目搭建Package
 
 网络请求 ： `dio: ^2.1.16` [超级详细关于Dio的使用说明](https://segmentfault.com/a/1190000015853959)
@@ -114,9 +112,37 @@ Row/Column 嵌套时，mainAxisSize=max 只有最外层有效
 较为复杂，优先考虑Wrap实现
 
 - FlowDelegate 中 paintChildren() 方法
-- 
+
+### 
+
+#### 数据共享
+
+- 保存共享数据： `InheritedWidget`（能够绑定与子孙组件的依赖关系） 
+- 数据发生变化时，发送通知：`ChangeNotifier`（需要共享的数据放到Model中，继承自ChangeNotifier）
+- 订阅者来重构，一般定义 `of() `方法方便子树widget获取共享数据
+
+
+
+###Provider  
+
+- [Provider ](https://juejin.im/post/5d00a84fe51d455a2f22023f)
+
+**StatefulWidget** 是Flutter 提供的状态管理方式
 
 
 
 
 
+#### 基本概念
+
+- **https://juejin.im/post/5c768ad2f265da2dce1f535c**
+
+
+
+
+
+[从0到1开发掘金APP](https://juejin.im/post/5c910bd55188252da05f3f05)
+
+瀑布流：pub => flutter_staggered_grid_view
+
+List headerView 缩放：https://juejin.im/post/5bebcc44f265da61682aedb8
